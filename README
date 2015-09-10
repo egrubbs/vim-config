@@ -7,9 +7,10 @@ Contents
         This directory contains scripts that help you verify that your
         .vimrc file is loading everything correctly.
     personal/
-        Here are configs that are relevant to development on Launchpad's
-        code base. Other Canonical projects could create top level
-        directories for their settings.
+        Here are the configs for a single person. If a repository should
+        be shared between multiple people, then you might want to create
+        multiple of these directories and update the Makefile
+        appropriately for testing.
     share/
         Here is where re-usable or 3rd party vim configs go. The project
         specific directories, such as 'personal', will then load items
