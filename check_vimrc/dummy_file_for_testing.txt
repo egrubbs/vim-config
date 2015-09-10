@@ -1,0 +1,5 @@
+This dummy file is needed to test whether the doctest file detection is
+working since it looks inside the file for ">>>" because the .txt could
+be several different filetypes.
+
+    >>> This line will cause the file to be detected as a doctest file.

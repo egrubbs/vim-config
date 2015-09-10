@@ -1,0 +1,6 @@
+before
+from one.two.three import (
+                            five,
+                            six,
+                            eight)
+after

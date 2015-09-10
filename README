@@ -1,0 +1,81 @@
+canonical-vim
+=============
+
+Contents
+--------
+    check_vimrc/
+        This directory contains scripts that help you verify that your
+        .vimrc file is loading everything correctly.
+    launchpad/
+        Here are configs that are relevant to development on Launchpad's
+        code base. Other Canonical projects could create top level
+        directories for their settings.
+    share/
+        Here is where re-usable or 3rd party vim configs go. The project
+        specific directories, such as 'launchpad', will then load items
+        from the 'share' directory.
+    testing/
+        Libraries used to run vim unit tests. Tests are located in
+        launchpad/tests and share/tests.
+
+Dependencies
+------------
+
+These vim settings and plugins have been tested on VIM 7.2. You will
+also need the vim-python package.
+
+The pocketlint vim plugin depends on having pocketlint installed.
+   https://launchpad.net/pocket-lint
+
+
+Installation
+------------
+
+Normally, you will put this branch in $HOME/.vim/canonical-vim, but you
+could put canonical-vim in any other directory in your runtimepath. (To
+find out more, start vim and enter the command ":help runtimepath")
+
+Load all launchpad configs
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After you have placed the canonical-vim directory, you can load all the configs
+by adding the following line to your $HOME/.vimrc file.
+
+    runtime canonical-vim/launchpad/all.vim
+
+Load specific configs
+~~~~~~~~~~~~~~~~~~~~~
+
+If you don't like all the settings, you can load the launchpad/standard.vim or
+the .vim files in the launchpad/optional directory like so:
+
+    runtime canonical-vim/launchpad/standard.vim
+    runtime canonical-vim/launchpad/optional/python_ctrl_p_format_import.vim
+
+If you want to load all the filetype specific settings in launchpad/ftdetect
+and launchpad/ftplugin, you will need to add canonical-vim/launchpad to the
+runtimepath.
+
+    set runtimepath+=$HOME/.vim/canonical-vim/launchpad
+
+If you only want to use some of the filetype specific configs, you could
+symlink files in launchpad/ftdetect to $HOME/.vim/ftdetect and symlink files
+from launchpad/ftplugin to $HOME/.vim/ftplugin.
+
+Checking that the configs are being loaded
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After you have edited your .vimrc, you can run
+canonical-vim/check_vimrc/loaded.sh to see which global .vim files were
+loaded.
+
+You can run canonical-vim/check_vimrc/ftplugin.sh to see whether vim will load
+the filetype specific settings in launchpad/ftplugin when a file of that type
+is edited.
+
+
+Testing
+-------
+
+You can run all the tests with the command:
+    make test

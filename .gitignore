@@ -1,0 +1,19 @@
+
+.bzr
+.bzrignore
+*.pyc
+*.pyo
+*~
+.~lock.*
+cruft
+
+# unneeded runvimtests files
+*.out
+*.msgout
+
+# vim swap files
+*.swp
+*.swo
+
+# Mac junk
+.DS_Store

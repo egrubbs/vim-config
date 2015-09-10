@@ -1,0 +1,5 @@
+Tell vim how to detect certain filetypes so that it will know to use the
+appropriate extra configs in the ftplugin directory.
+
+Vim already knows that .pt files are ZPT templates, so it sets the
+filetype to html automatically.

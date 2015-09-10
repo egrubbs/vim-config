@@ -1,0 +1,3 @@
+This directory is currently used by canonical-vim/launchpad/_setup.vim
+to put canonical-vim in the runtimepath without interference from the
+user's .vimrc.

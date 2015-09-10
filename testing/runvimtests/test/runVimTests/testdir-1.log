@@ -1,0 +1,121 @@
+
+Starting test run with these Vim options:
+vim --cmd 'set rtp=$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after' -N -u NORC -c 'set rtp&' -f -es --cmd "let g:runVimTests='default'"
+
+signalError001: Test error signal to test driver. 
+ERROR
+ERROR: This test doesn't test ABC.
+
+signalSkip007: Test inactive convenience function vimtest#SkipAndQuitIf(). 
+FAIL (out): expected output           |   actual output
+This is the expected result. 	      |	Can write what I want, does not matte
+This should be in here!			This should be in here!
+
+tapSkip003: Test different skipping methods. 
+not ok 3 - # SKIP foo
+# Test '# SKIP foo' failed:
+# expected: '0'
+# but got:  '1'
+
+tapTodo001: Test Todo of some TAP tests. 
+not ok 2 # TODO 1 == 2
+# Test '1 == 2' failed:
+# expected: '2'
+# but got:  '1'
+ok 3 # TODO 2 == 2
+ok 5 # TODO not yet implemented
+# We will implement this one soon.
+not ok 6 # TODO not right
+
+test002: Test failed saved buffer output. 
+FAIL (out): expected output           |   actual output
+Successful execution.		      |	Not what was expected.
+
+test003: Test no buffer output was saved. 
+ERROR (out): No test output.
+
+test012: Test failed message output. 
+FAIL (msgout): The message assertion was not satisfied by the output: 
+ --> Message assertion 1 from line 1 did not match in output lines 1-2
+     Successful execution.$
+
+test013: Test missing message output. 
+ERROR: Couldn't capture message output.
+ERROR (msgout): No test messages.
+
+test014: Test empty message output. 
+FAIL (msgout): The message assertion was not satisfied by the output: 
+ --> Message assertion 1 from line 1 did not match in output line 1
+     Successful execution.$
+
+test022: Test failed TAP output. 
+not ok 2 - 1 == 2
+# Test '1 == 2' failed:
+# expected: '2'
+# but got:  '1'
+not ok 3 - matches
+# Test 'matches' failed:
+# got: 'F00bAr 2000'
+# does not match: /fo\+.* \d\+/
+# Some diagnostic message.
+
+test023: Test TAP output with errors. 
+ERROR (tap): Not all 3 planned tests have been executed, 1 test missed.
+
+test024: Test TAP output with failures and too many tests. 
+not ok 1 - not right
+not ok 2 - 1 == 2
+# Test '1 == 2' failed:
+# expected: '2'
+# but got:  '1'
+not ok 4 - one too many, even wrong
+ERROR (tap): 2 more test executions than planned.
+
+test032: Test failed combination buffer + message + TAP output. 
+FAIL (out): expected output           |   actual output
+Successful execution.		      |	Not what was expected. 
+FAIL (msgout): The message assertion was not satisfied by the output: 
+ --> Message assertion 1 from line 1 did not match in output lines 1-5
+     Successful execution.$
+not ok 1 - not right
+not ok 2 - 1 == 2
+# Test '1 == 2' failed:
+# expected: '2'
+# but got:  '1'
+not ok 3 - matches
+# Test 'matches' failed:
+# got: 'F00bAr 2000'
+# does not match: /fo\+.* \d\+/
+# Some diagnostic message.
+
+test033: Test error combination buffer + message + TAP output. 
+ERROR: Couldn't capture message output.
+ERROR (out): No test output.
+ERROR (msgout): No test messages.
+not ok 2 - 1 == 2
+# Test '1 == 2' failed:
+# expected: '2'
+# but got:  '1'
+ERROR (tap): Not all 3 planned tests have been executed, 1 test missed.
+
+zzzSignalBailout001: Test bailout signal to test driver. 
+BAIL OUT: It's so f...ed up!
+
+35 files with 101 tests (aborted); 24 skipped, 70 run: 50 OK, 16 failures, 12 errors, 4 TODO.
+Skipped tests: signalSkip001, signalSkip005, signalSkip006, tapSkip002
+Tests with skips: signalSkip002, signalSkip003, signalSkip004, tapParsing001, tapSkip001, tapSkip003
+      2 SKIP (msgout): Let's just forget about the captured messages.
+      1 SKIP (out): Let's just forget about the saved buffer contents.
+      1 SKIP (out): Lets just forget about the saved buffer contents.
+      2 SKIP (tap): 
+      1 SKIP (tap): all -> right <-
+      3 SKIP (tap): fOO
+      2 SKIP (tap): Let's just forget about the TAP unit tests.
+      2 SKIP (tap): need (different) "arithmetics"
+      1 SKIP (tap): need a (('nice' ^)) miracle&&hope||luck
+      1 SKIP (tap): need a miracle
+      2 SKIP (tap): need different arithmetics
+      2 SKIP: Let's just forget about this one.
+Failed tests: signalSkip007, tapSkip003, test002, test012, test014, test022, test024, test032, test033
+Tests with errors: signalError001, test003, test013, test023, test024, test033, zzzSignalBailout001
+TODO tests: tapTodo001

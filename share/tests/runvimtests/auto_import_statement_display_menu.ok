@@ -1,0 +1,6 @@
+alpha()
+Select import:
+1: alpha                                    class alpha: # Test comments.         
+2: alpha                                    def alpha(): pass                     
+3: alpha                                    def alpha(self,                       
+4: alpha                                    alpha = "Test double quote escaping"  

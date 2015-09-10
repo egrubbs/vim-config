@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+SubMod	/home/egrubbs/.vim/canonical-vim/share/tests/data/submod/__init__.py	/^SubMod = 100$/;"	v
+abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789	/home/egrubbs/.vim/canonical-vim/share/tests/data/superlongidentifiers_0123456789_0123456789_0123456789_0123456789.py	/^    def abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789(self,$/;"	m	class:abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789
+abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789	/home/egrubbs/.vim/canonical-vim/share/tests/data/superlongidentifiers_0123456789_0123456789_0123456789_0123456789.py	/^abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789 = "Test double quote escaping"$/;"	v
+abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789	/home/egrubbs/.vim/canonical-vim/share/tests/data/superlongidentifiers_0123456789_0123456789_0123456789_0123456789.py	/^class abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789():$/;"	c
+abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789	/home/egrubbs/.vim/canonical-vim/share/tests/data/superlongidentifiers_0123456789_0123456789_0123456789_0123456789.py	/^def abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789(): pass$/;"	f
+alpha	/home/egrubbs/.vim/canonical-vim/share/tests/data/alpha.py	/^    def alpha(self,$/;"	m	class:alpha
+alpha	/home/egrubbs/.vim/canonical-vim/share/tests/data/alpha.py	/^alpha = "Test double quote escaping"$/;"	v
+alpha	/home/egrubbs/.vim/canonical-vim/share/tests/data/alpha.py	/^class alpha: # Test comments.$/;"	c
+alpha	/home/egrubbs/.vim/canonical-vim/share/tests/data/alpha.py	/^def alpha(): pass$/;"	f

@@ -1,0 +1,5 @@
+before
+from one.two.three import (
+    eight, eighteen, eleven, fifteen, five, fourteen, nine, nineteen, seven,
+    seventeen, six, sixteen, ten, thirteen, twelve, twenty, twentyone)
+after
