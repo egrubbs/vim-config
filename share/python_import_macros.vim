@@ -14,8 +14,8 @@ if exists('b:loaded_python_import_macros')
 endif
 let b:loaded_python_import_macros = 1
 
-" Add canonical-vim/share/python_path to the PYTHONPATH.
-runtime canonical-vim/share/python_path.vim
+" Add vim-config/share/python_path to the PYTHONPATH.
+runtime vim-config/share/python_path.vim
 
 highlight link NewImportID Todo
 

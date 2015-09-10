@@ -33,7 +33,7 @@ set modeline
 " etc., but also jump between matching if/elif/else statements and html tags.
 " This is normally configured by the filetype plugin, but matching for
 " python is provided by share/python_match.vim, which is loaded by
-" launchpad/python_options.vim.
+" personal/python_options.vim.
 runtime macros/matchit.vim
 
 " (tw) Point at which the line is wrapped according to formatoptions.

@@ -2,7 +2,7 @@
 WD:=$(shell pwd)
 RUNVIMTESTS=$(WD)/testing/runvimtests/bin/runVimTests.sh -v
 SHARE_TEST_DIR=./share/tests/runvimtests
-LP_TEST_DIR=./launchpad/tests
+PERSONAL_TEST_DIR=./personal/tests
 
 # Filter out first four lines with `tail`. Do not filter anything out
 # with grep by matching the zero-length `^` beginning-of-line, but
@@ -21,9 +21,9 @@ default:
 		| sed -re 's/^/    /' \
 		| sort
 
-test: test_share test_launchpad
+test: test_share test_personal
 
-clean: clean_share clean_launchpad
+clean: clean_share clean_personal
 
 test_share:
 	@$(RUNVIMTESTS) -1 \
@@ -35,16 +35,16 @@ clean_share:
 	$(RM) $(SHARE_TEST_DIR)/*.msgout
 	$(RM) $(SHARE_TEST_DIR)/*.out
 
-test_launchpad:
-	@$(RUNVIMTESTS) -1 $(LP_TEST_DIR) \
+test_personal:
+	@$(RUNVIMTESTS) -1 $(PERSONAL_TEST_DIR) \
 		| $(FILTER_RUNVIMTESTS_HEADER)
 
-clean_launchpad:
-	$(RM) $(LP_TEST_DIR)/*.msgout
-	$(RM) $(LP_TEST_DIR)/*.out
+clean_personal:
+	$(RM) $(PERSONAL_TEST_DIR)/*.msgout
+	$(RM) $(PERSONAL_TEST_DIR)/*.out
 
 build_test_tags:
 	$(CTAGS) -R -f $(WD)/share/tests/data/tags $(WD)/share/tests/data/
 
 
-.PHONY: test test_share test_launchpad clean clean_share clean_launchpad build_test_tags
+.PHONY: test test_share test_personal clean clean_share clean_personal build_test_tags

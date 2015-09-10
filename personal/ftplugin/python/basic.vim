@@ -11,12 +11,12 @@ let g:pyindent_open_paren = '&sw'
 let python_highlight_all = 1
 
 " Common configs for python, javascript, and css files.
-runtime canonical-vim/launchpad/ftplugin/_common.vim
+runtime vim-config/personal/ftplugin/_common.vim
 
 " Depends on the matchit.vim plugin. When a python file is loaded,
 " the '%' key can be used to jump between matching if/elif/else and try/except
 " statements in addition to matching parens, braces, and brackets.
-runtime canonical-vim/share/python_match.vim
+runtime vim-config/share/python_match.vim
 
 " ***** UNNECESSARY ******
 " Already configured by

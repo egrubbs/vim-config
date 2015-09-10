@@ -10,11 +10,11 @@
 check_dir=$(dirname $0)
 echo 'checkdir:' $check_dir
 
-function check_launchpad_ftplugin {
+function check_personal_ftplugin {
     extension=${1:?Missing extension argument}
     ftplugin_filename=${2:?Missing name of ftplugin file}
 
-    echo "Was the launchpad/ftplugin/$ftplugin_filename sourced for a .$extension file?"
+    echo "Was the personal/ftplugin/$ftplugin_filename sourced for a .$extension file?"
     result=$(\
         vim -V2 -e -X -i NONE \
         -c "e ${check_dir}/dummy_file_for_testing.${extension}" \
@@ -23,7 +23,7 @@ function check_launchpad_ftplugin {
         2>&1)
     
     echo $result \
-        | grep -q "sourcing \".*launchpad/ftplugin/${ftplugin_filename}"
+        | grep -q "sourcing \".*personal/ftplugin/${ftplugin_filename}"
     # Check error code for grep.
     if [ "$?" = 0 ]; then
         echo "   YES"
@@ -36,12 +36,12 @@ function check_launchpad_ftplugin {
 }
 
 echo
-check_launchpad_ftplugin py python/basic.vim
-check_launchpad_ftplugin py python/load_pocketlint.vim
-check_launchpad_ftplugin html html.vim
+check_personal_ftplugin py python/basic.vim
+check_personal_ftplugin py python/load_pocketlint.vim
+check_personal_ftplugin html html.vim
 # .pt files are recognized as html files, so the html.vim is loaded.
-check_launchpad_ftplugin pt html.vim
-check_launchpad_ftplugin zcml xml.vim
-check_launchpad_ftplugin txt doctest.vim
-check_launchpad_ftplugin css css.vim
-check_launchpad_ftplugin js javascript.vim
+check_personal_ftplugin pt html.vim
+check_personal_ftplugin zcml xml.vim
+check_personal_ftplugin txt doctest.vim
+check_personal_ftplugin css css.vim
+check_personal_ftplugin js javascript.vim

@@ -2,7 +2,7 @@
 setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Real time syntax checking.
-runtime canonical-vim/share/pocketlint.vim
+runtime vim-config/share/pocketlint.vim
 
 " Common configs for python, javascript, and css files.
-runtime canonical-vim/launchpad/ftplugin/_common.vim
+runtime vim-config/personal/ftplugin/_common.vim

@@ -4,12 +4,12 @@
 syntax on
 
 python << EOF
-# Set up runtimepath so that it can find canonical-vim.
+# Set up runtimepath so that it can find vim-config.
 import vim
 import os
-# abspath() is relative to the CWD, which is canonical-vim/launchpad/tests.
+# abspath() is relative to the CWD, which is vim-config/personal/tests.
 path = os.path.abspath('../../testing/fake_runtimepath')
 vim.command('set runtimepath+=%s' % path)
 EOF
 
-runtime canonical-vim/launchpad/all.vim
+runtime vim-config/personal/all.vim
